@@ -1,3 +1,5 @@
+package JavaDemo;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -37,11 +39,21 @@ public class MainWindow extends JFrame{
 	}
 	
 	public static void main(String[]args){
-		MainWindow gui = new MainWindow();
+		/*MainWindow gui = new MainWindow();
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gui.setSize(300,100);
 		//gui.setLocation(300,300);
 		gui.setVisible(true);
-		gui.setTitle("Main Window");
+		gui.setTitle("Main Window");*/
+		
+		GameCharacter player = new GameCharacter();
+		GameCharacter enemy = new GameCharacter();
+		
+		player.SetCharecter("James", 100, 8, 70);
+		enemy.SetCharecter("Slime", 69, 2, 10);
+		
+		player.Attack(enemy);
+		enemy.Attack(player, 1000);
+		player.Attack(enemy);
 	}
 }
